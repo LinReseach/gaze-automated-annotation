@@ -6,9 +6,14 @@ vis_root = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/visib
 invis_root = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/invisible'
 vis_dest = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/frames/frame_vis/'
 invis_dest = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/frames/frame_invis/'
+vis_cmd = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/visible_cmd.txt'
+invis_cmd = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/invisible_cmd.txt'
+root = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/new'
 
 vids = []
-
+vis_cmd = []
+invis_cmd = []
+        
 for path, subdirs, files in os.walk(vis_root):
     for name in files:
         if '.mp4' not in name.lower():
@@ -27,9 +32,13 @@ for path, subdirs, files in os.walk(vis_root):
             outname
         ])
         cmd+=';'
+        # print(cmd)
+        vis_cmd.append(cmd)
 
-        print(cmd)
-        
+with open("visible_cmd.txt", "w") as file:
+	for c in vis_cmd:
+		file.write(c)
+		
 for path, subdirs, files in os.walk(invis_root):
     for name in files:
         if '.mp4' not in name.lower():
@@ -48,5 +57,9 @@ for path, subdirs, files in os.walk(invis_root):
             outname
         ])
         cmd+=';'
+        # print(cmd)
+        invis_cmd.append(cmd)
 
-        print(cmd)
+with open("invisible_cmd.txt", "w") as file:
+	for c in invis_cmd:
+		file.write(c)
