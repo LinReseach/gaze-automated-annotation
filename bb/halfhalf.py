@@ -2,13 +2,13 @@ import os
 from fnmatch import fnmatch
 import subprocess
 
-vis_root = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/visible'
-invis_root = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/invisible'
-vis_dest = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/frames/frame_vis/'
-invis_dest = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/frames/frame_invis/'
-vis_cmd = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/visible_cmd.txt'
-invis_cmd = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/invisible_cmd.txt'
-root = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/new'
+root = '/home/sail/Documents/ronald/code/gaze-automated-annotation/bb/'
+vis_root = root+'visible/'
+invis_root = root+'invisible/'
+vis_dest = root+'frames/frames_vis/'
+invis_dest = root+'frames/frames_inv/'
+vis_cmd = root+'visible_cmd.txt'
+invis_cmd = root+'invisible_cmd.txt'
 
 vids = []
 vis_cmd = []
@@ -57,7 +57,7 @@ for path, subdirs, files in os.walk(invis_root):
             outname
         ])
         cmd+=';'
-        # print(cmd)
+        print(cmd)
         invis_cmd.append(cmd)
 
 with open("invisible_cmd.txt", "w") as file:

@@ -1,1 +1,0 @@
-51007_sessie1_taskrobotEngagement.png, (0, 390), (135, 480), (225, 455), (540, 480), (555, 455), (725, 480), ['Tablet', 'Robot'] 

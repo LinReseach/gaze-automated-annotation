@@ -6,11 +6,14 @@ import cv2
 import pandas as pd
 import numpy as np
 
-vis_img_root = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/frames/frame_vis/'
-invis_img_root = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/frames/frame_invis/'
-saved_vis_root = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/frames/Saved_frame/fig_vis/'
-saved_invis_root = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/frames/Saved_frame/fig_invis/'
-img_name = '51007_sessie1_taskrobotEngagement.png'
+root = '/home/sail/Documents/ronald/code/gaze-automated-annotation/bb/'
+vis_img_root = root+'frames/frames_vis/'
+invis_img_root = root+'frames/frames_inv/'
+saved_vis_root = root+'frames/Saved_frame/fig_vis/'
+saved_invis_root = root+'frames/Saved_frame/fig_invis/'
+img_name = 'Proefpersoon11029_sessie3.png'
+# makes output window scalable
+cv2.namedWindow(img_name, cv2.WINDOW_NORMAL)
 
 vis_img = vis_img_root + img_name
 invis_img = invis_img_root + img_name
@@ -19,11 +22,13 @@ invis_img = invis_img_root + img_name
 # im = cv2.imread(vis_img)
 im = cv2.imread(invis_img)
 height, width, channels = im.shape
-# print(f"({width}, {height})")   # (852,480) (1280,720)
+# print(f"({width}, {height})")   # (852,480) (1280,720) (1920, 1080)
 
 # Draw rectangles (SP=start point, EP=End point)
-tablet_SP, tablet_EP, robot_SP, robot_EP, table_SP, table_EP = \
-(0, 390), (135, 480), (225, 455), (540, 480), (555, 455), (725, 480)
+tablet_SP, tablet_EP = (900, 800), (1300, 1080)
+robot_SP, robot_EP = (1350, 180), (1830, 1080)
+table_SP, table_EP = (1340, 760), (1920, 1080)
+
 # Red rectangle (tablet)
 tablet_invis = True
 cv2.rectangle(im, tablet_SP, tablet_EP,
@@ -34,7 +39,7 @@ robot_invis = True
 cv2.rectangle(im, robot_SP, robot_EP,
               (0, 255, 0), 1)
 # Blue rectangle (table)
-table_invis = False
+table_invis = True
 cv2.rectangle(im, table_SP, table_EP,
               (255, 0, 0), 1)
 
@@ -76,6 +81,6 @@ with open("pixel_position_invis.txt", "a") as file:
                f"{norm_robot_EP}, {norm_table_SP}, {norm_table_EP}, {invis_obj} \n")
 
 # Maintain output window until user presses a key
-cv2.waitKey(5000)
+cv2.waitKey(2*50000)
 # Destroying present windows on screen
 cv2.destroyAllWindows()
