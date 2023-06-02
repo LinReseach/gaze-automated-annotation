@@ -10,10 +10,12 @@ vis_cmd = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/visibl
 invis_cmd = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/invisible_cmd.txt'
 root = '/home/linlincheng/Gaze_estimation/gaze-automated-annotation/bb/new'
 
+# file_list = ["Proefpersoon11012_sessie1.mp4", "Proefpersoon11012_sessie2.mp4", "Proefpersoon11012_Sessie3.mp4"]
+
 vids = []
 vis_cmd = []
 invis_cmd = []
-        
+
 for path, subdirs, files in os.walk(vis_root):
     for name in files:
         if '.mp4' not in name.lower():
