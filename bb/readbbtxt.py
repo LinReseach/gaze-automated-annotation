@@ -35,7 +35,7 @@ def readbbtxt(path=path):
     for p in pp:
         data[p]=data[p].apply(lambda x : float(x.replace(')', '')))
         data['obj_list'] = data['obj_list'].apply(lambda x: str(x))
-        data['obj_list'] = data['obj_list'].apply(lambda x : '[' + x if x[-1] == ']' else '[]' if x == 'one' else x)
+        data['obj_list'] = data['obj_list'].apply(lambda x : '[' + x if x[-1] == ']' and x[0] != '[' else '[]' if x == 'one' else x)
 
     
     return data
