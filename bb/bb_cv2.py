@@ -7,10 +7,10 @@ import pandas as pd
 import numpy as np
 
 root = '/home/sail/Documents/ronald/code/gaze-automated-annotation/bb/'
-vis_img_root = root+'frames/frames_vis/'
-invis_img_root = root+'frames/frames_inv/'
-saved_vis_root = root+'frames/Saved_frame/fig_vis/'
-saved_invis_root = root+'frames/Saved_frame/fig_invis/'
+vis_img_root = root + 'frames/frames_vis/'
+invis_img_root = root + 'frames/frames_inv/'
+saved_vis_root = root + 'frames/Saved_frame/fig_vis/'
+saved_invis_root = root + 'frames/Saved_frame/fig_invis/'
 img_name = 'Proefpersoon11029_sessie3.png'
 # makes output window scalable
 cv2.namedWindow(img_name, cv2.WINDOW_NORMAL)
@@ -81,6 +81,6 @@ with open("pixel_position_invis.txt", "a") as file:
                f"{norm_robot_EP}, {norm_table_SP}, {norm_table_EP}, {invis_obj} \n")
 
 # Maintain output window until user presses a key
-cv2.waitKey(2*50000)
+cv2.waitKey(2 * 50000)
 # Destroying present windows on screen
 cv2.destroyAllWindows()
