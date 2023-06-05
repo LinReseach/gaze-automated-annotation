@@ -143,7 +143,6 @@ if __name__ == '__main__':
                     # gaze prediction
                     gaze_pitch, gaze_yaw = model(img)
                     
-                    
                     pitch_predicted = softmax(gaze_pitch)
                     yaw_predicted = softmax(gaze_yaw)
                     
