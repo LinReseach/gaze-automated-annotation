@@ -154,11 +154,12 @@ def classify_gaze(a, b, c, d, image_in, pitch_pred, jaw_pred):
     rec = data[data['file'] == filename]
     # Check small objects first because if e.g. tablet bb intersects with bb of robot and gaze is towards the parts of intersection, changes are higher the child is indeed looking at the
     # smaller bb, thus the tablet.
-    if inbb(int(rec['tl_tablet_x'][0]*w), int(rec['tl_tablet_y'][0]*h), int(rec['br_tablet_x'][0]*w), int(rec['br_tablet_y'][0]*h), gazex, gazey):
+
+    if inbb(int(rec['tl_tablet_x'].iloc[0]*w), int(rec['tl_tablet_y'].iloc[0]*h), int(rec['br_tablet_x'].iloc[0]*w), int(rec['br_tablet_y'].iloc[0]*h), gazex, gazey):
         return 2
-    elif inbb(int(rec['tl_pp_x'][0]*w), int(rec['tl_pp_y'][0]*h), int(rec['br_pp_x'][0]*w), int(rec['br_pp_y'][0]*h), gazex, gazey):
+    elif inbb(int(rec['tl_pp_x'].iloc[0]*w), int(rec['tl_pp_y'].iloc[0]*h), int(rec['br_pp_x'].iloc[0]*w), int(rec['br_pp_y'].iloc[0]*h), gazex, gazey):
         return 0
-    elif inbb(int(rec['tl_robot_x'][0]*w), int(rec['tl_robot_y'][0]*h), int(rec['br_robot_x'][0]*w), int(rec['br_robot_y'][0]*h), gazex, gazey):
+    elif inbb(int(rec['tl_robot_x'].iloc[0]*w), int(rec['tl_robot_y'].iloc[0]*h), int(rec['br_robot_x'].iloc[0]*w), int(rec['br_robot_y'].iloc[0]*h), gazex, gazey):
         return 1
     else:
         return 3
