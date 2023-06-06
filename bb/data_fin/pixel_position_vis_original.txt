@@ -1,4 +1,4 @@
-33001_sessie1_taskrobotEngagement.png, (260, 418), (444, 480), (658, 414), (852, 480), (170, 150), (346, 480), None
+33001_sessie1_taskrobotEngagement.png, (260, 418), (444, 480), (170, 150), (346, 480), (658, 414), (852, 480), None
 33001_sessie2_taskrobotEngagement.png, (120, 438), (333, 480), (685, 88), (830, 480), (515, 300), (682, 438), None
 33001_sessie3_taskrobotEngagement.png, (0, 418), (191, 480), (608, 98), (783, 480), (433, 312), (688, 456), None
 33002_sessie1_taskrobotEngagement.png, (210, 445), (380, 480), (130, 158), (333, 480), (535, 390), (852, 480), None

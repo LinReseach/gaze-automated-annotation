@@ -32,13 +32,13 @@ for f in data['file']:
             d = data[data['file']==f]
        
             # Red rectangle (tablet)
-            cv2.rectangle(frame, (int(d['tl_tablet_x']*width), int(d['tl_tablet_y']*height)), (int(d['br_tablet_x']*width), int(d['br_tablet_y']*height)),
+            cv2.rectangle(frame, (int(d['tl_tablet_x'][0]*width), int(d['tl_tablet_y'][0]*height)), (int(d['br_tablet_x'][0]*width), int(d['br_tablet_y'][0]*height)),
                           (0, 0, 255), 0)
             # Green rectangle (robot)
-            cv2.rectangle(frame, (int(d['tl_robot_x']*width), int(d['tl_robot_y']*height)), (int(d['br_robot_x']*width), int(d['br_robot_y']*height)),
+            cv2.rectangle(frame, (int(d['tl_robot_x'][0]*width), int(d['tl_robot_y'][0]*height)), (int(d['br_robot_x'][0]*width), int(d['br_robot_y'][0]*height)),
                           (0, 255, 0), 0)
             # Blue rectangle (table)
-            cv2.rectangle(frame, (int(d['tl_pp_x']*width), int(d['tl_pp_y']*height)), (int(d['br_pp_x']*width), int(d['br_pp_y']*height)),
+            cv2.rectangle(frame, (int(d['tl_pp_x'][0]*width), int(d['tl_pp_y'][0]*height)), (int(d['br_pp_x'][0]*width), int(d['br_pp_y'][0]*height)),
                           (255, 0, 0), 0)
             
     
